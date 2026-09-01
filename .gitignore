@@ -1,0 +1,5 @@
+# Local secrets & runtime state — never commit
+mac-agent/config.env
+mac-agent/logs/
+mac-agent/state/
+.DS_Store

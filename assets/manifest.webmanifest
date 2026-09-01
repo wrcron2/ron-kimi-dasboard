@@ -1,0 +1,15 @@
+{
+  "name": "Ron — Kimi Dashboard",
+  "short_name": "Kimi Dash",
+  "description": "Personal ops dashboard: chat, Mac status, and VS Code access.",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0e14",
+  "theme_color": "#0b0e14",
+  "start_url": "../index.html",
+  "scope": "../",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
