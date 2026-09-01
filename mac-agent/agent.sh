@@ -43,6 +43,22 @@ mkdir -p "$WORKSPACE_DIR" 2>/dev/null || true
 CHILD_PIDS=""
 TUNNEL_IDS=""
 CAFFEINATE_PID=""
+
+# --- resolve a WORKING node (survives a broken default `node`, e.g. after a
+#     brew openssl upgrade) — smoke-test each candidate, first success wins ---
+NODE_BIN=""
+for c in node /opt/homebrew/opt/node@22/bin/node /usr/local/opt/node@22/bin/node /opt/homebrew/bin/node /usr/local/bin/node; do
+  if command -v "$c" >/dev/null 2>&1 && "$c" -e 'process.exit(0)' >/dev/null 2>&1; then
+    NODE_BIN="$c"
+    break
+  fi
+done
+if [ -n "$NODE_BIN" ]; then
+  log "node: using $NODE_BIN ($("$NODE_BIN" -v 2>/dev/null))"
+else
+  log "ERROR: no working node found (tried node, node@22, brew paths). Fix: brew reinstall node"
+fi
+
 # per-service state kept in dynamically named vars: TPID_<id>, TPORT_<id>, TURL_<id>
 # (bash 3.2 has no assoc arrays — use eval indirection instead)
 tset() { eval "$1_$2=\"$3\""; }              # tset TPID relay 1234
@@ -56,11 +72,11 @@ start_relay() {
     log "relay: port $RELAY_PORT already in use — assuming relay already running"
     return
   fi
-  if ! command -v node >/dev/null 2>&1; then
-    log "ERROR: node not found. Install with: brew install node"
+  if [ -z "$NODE_BIN" ]; then
+    log "ERROR: no working node — relay not started (see above)"
     return
   fi
-  node relay.js >> logs/relay.log 2>&1 &
+  "$NODE_BIN" relay.js >> logs/relay.log 2>&1 &
   CHILD_PIDS="$CHILD_PIDS $!"
   log "relay: started (pid $!) on 127.0.0.1:$RELAY_PORT"
 }
@@ -104,7 +120,9 @@ start_tunnel() {
 
 harvest_url() {
   # prints first trycloudflare URL found in the tunnel log, if any
-  grep -o -m1 'https://[a-z0-9-]*\.trycloudflare\.com' "logs/cloudflared-$1.log" 2>/dev/null | head -1
+  # (-a: cloudflared logs contain control bytes — without it grep reports
+  #  "Binary file ... matches" and poisons the captured URL)
+  grep -a -o -m1 'https://[a-z0-9-]*\.trycloudflare\.com' "logs/cloudflared-$1.log" 2>/dev/null | head -1
 }
 
 write_tunnels_json() {
@@ -131,13 +149,13 @@ write_tunnels_json() {
 HB_PID=""
 HB_PIDS=""   # every background heartbeat pid ever spawned (for shutdown)
 run_heartbeat() {
-  if ! command -v node >/dev/null 2>&1; then return; fi
+  if [ -z "$NODE_BIN" ]; then return; fi
   # single-flight guard: a slow heartbeat (e.g. backoff sleep) must never
   # overlap the next 60s tick — skip this tick while one is still running.
   if [ -n "$HB_PID" ] && kill -0 "$HB_PID" 2>/dev/null; then
     return   # previous heartbeat still running — skip, avoid sha race
   fi
-  node heartbeat.js >> logs/heartbeat.log 2>&1 &
+  "$NODE_BIN" heartbeat.js >> logs/heartbeat.log 2>&1 &
   HB_PID=$!
   HB_PIDS="$HB_PIDS $HB_PID"
 }
