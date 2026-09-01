@@ -11,6 +11,11 @@ set -u
 # launchd even though they work fine in an interactive shell.
 export PATH="/opt/homebrew/bin:/usr/local/bin:/opt/homebrew/sbin:/usr/local/sbin:$PATH"
 
+# macOS fork-safety: node processes spawned by launchd SIGABRT ("Abort trap: 6")
+# as soon as they fork a child (kimi probe, pmset) because the ObjC runtime
+# initializes differently under launchd. This var disables that abort.
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 cd "$(dirname "$0")" || exit 1
 AGENT_DIR="$PWD"
 mkdir -p logs state state/kimi-sessions
