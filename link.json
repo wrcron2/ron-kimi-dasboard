@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "updatedAt": "2026-09-01T15:22:54.311Z",
+  "host": "Rons-MacBook-Pro-2.local",
+  "enc": {
+    "alg": "PBKDF2-SHA256-100000/AES-256-GCM",
+    "nonce": "qdeBa2cQcSUiPQ+a",
+    "payload": "22yAngYIYJz9ymUq6yyj5MddDvGyW7h4v0WtETdVm7VqQCmS2IV2VLZIu/JDd5BaWoh7DU7ihK4W9U/oqTci5krygvhzzd7MKYeqdRrt6Bj3OTcKIAEjmBmHlJq5JVF6y9yCWB2C2tf+j90OG2AUC3oTctkFjQepse0TGCiDaiN6Tl0Sxfe4ObtYffWI/6chDZ1Tq/t19BhTQWMmPCTabRV6SMyDB5VVmF3FKJt0YfFieBtz4cH4/3RXm8igTgQOGBHokfE7Yym39xKciZ4hMwrxEXkFh6X7RvC0obEqGRz4tD+VcQy29d56CcBOHwcjhV2JsSFogV+clpcvqdqaiqs9wtGIW7YgBqYvcRnsRUgP3zFEFDpRxOXtm4+JIeH7Lc7l8sHicQvLRrKN2vTzCgxTMdH5jYAL4pJ7BnCCTBqVtz4mpqWt87JCLDPo86uuhrs1fx3b1ceNXsoNGTiLnIayiUqwCORkIhryn3YqLKr0LSme8xin2yB9nckATtM4Utp/ecGqMXJg8BBD/G0dLVHT/8oD9jjnrUUKk9HkxeADhQPEYiCGlLw4I3SlR8OXIXbkPmk1K8DvGNHfRMkkdF+pO1SoMNA7+j8lQd+L/v29"
+  }
+}
