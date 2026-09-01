@@ -6,6 +6,11 @@
 # Compatible with macOS /bin/bash 3.2 (no associative arrays).
 set -u
 
+# launchd agents get a minimal PATH (/usr/bin:/bin:...) that hides Homebrew —
+# without this, node/code-server/cloudflared are "not found" when started by
+# launchd even though they work fine in an interactive shell.
+export PATH="/opt/homebrew/bin:/usr/local/bin:/opt/homebrew/sbin:/usr/local/sbin:$PATH"
+
 cd "$(dirname "$0")" || exit 1
 AGENT_DIR="$PWD"
 mkdir -p logs state state/kimi-sessions
