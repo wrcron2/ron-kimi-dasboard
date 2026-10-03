@@ -1,10 +1,10 @@
 {
   "version": 3,
-  "updatedAt": "2026-10-03T21:41:31.531Z",
+  "updatedAt": "2026-10-03T21:42:31.623Z",
   "host": "Rons-MacBook-Pro-2.local",
   "enc": {
     "alg": "PBKDF2-SHA256-100000/AES-256-GCM",
-    "nonce": "FfSC8Zyza9JFZdPn",
-    "payload": "AdhlZEo9qCQDCFuQvcXQmGd6fAboeJUTIGDPGEFJPjYLCm7cCk4NHJyB/F0kQnXG5eObBKdsuEldzcchhFPFmWvKRfCfK+I0XOE8Xygdt5hHMw8GR5wZiUbpdQBY5KrvfOe+s7k4Pm3t45fcURo0yfz52B+r4x9HfzEVFuXi9qqgtgJiIebxkWZqZP59s/nMxlHUOzy5M+F376YqMLM56S2guINxqO4okPHUXMdCkQUfqneLHzmkebGGB+FwSwIppSMG40TZKjzHUeVfmnO4Fug9n8SxGNSU6/Ox2vPiyEgcVtKSuRfooroTpUoHhDarn0O2vZdpieAcrm+B7OVef6EBtWtCTcPpYi4CsPVlLEacLMDhIkdYJuqAQRJNtAnIzdTF0yCOpSECwYbPr1vgL5mkvm8fRy1/8gvTkrc03JdySzm06npZ62kf4mDRh1SwrLqowjPTBdIl4PKz1RWZJ1chXusUNi1/1BEG1FTB2K7JskUehIihjH961OQ4kur4udZDaStVs9947U25Y3wN8/gwzy6tPuu5qPKJqadvt/+9Uskmzs3WLW/90Tftca+k8tz0nQVx/Gtn7eAhqJ/+qe5mrhU65/zL+7MergH4zTCn/OYy6nkGW4w54mQv9B7muR7moGi/Mb1QU/neD9+HnXKNvf7orx32yMJrs435alDUa8X4uFVjbVrDZid+XnBgfEWIa/80DAEOkxkI3NKbXwEAJxiDKrrtxHtPpFQ6+pn4taenZ8b2IZnkDUVWy/cGGFxzMH5ocA=="
+    "nonce": "px1TGepvp48hvd/b",
+    "payload": "VyCCeAj+0o8OhosMFvplofOByT8GbPTIE45mzPdS6LbJ/rqrmwjCa/gcYD6Rj/zIYjhdP35xi+lTaQvNSu83OQOK77ClS9AtDuJaFC4w/NQltl/pxZmFQ20Mf2b7+AYILeOcrQGTmC+chaJtEhYcaugPmBFdlATJK8jcsAnQypuOsj8/5oJaZzatJXDT4gzGxoiGD9rmiWVlIliVGh4OLMhJ7XHSRYrHqhCLezqmeibli501EOKPQaql17wxrc+A5VqbLMtbkdihd2IY9Kw0IMJi+f3fgafSdLWSyL2zG5lb4J3NMr3IUX+EN4PaavybflMghqggcSDg8g8kFGtZiw60Q/MwhXOxMgSlZ0xmyP/rhJt1hYDtKV5PfoFl/saZUgz4ywZoLhsOuKQYvVI6cVRI3TPKdfabqoeIngw5Gh5zZ2jSIFAc/+llVB3xHQShkdYl/SB5l3ODxRFGjZx+XH6taE/1RNCd2WjkXOrmP4iR4reEUanzjd518+LpKvIn52LorHOKMY/KYA7n71ixz+Ims/c28QGcUw8aE9/9W/OLPpnYJpQrxYjMevGsiHLbLg9apUSxf6vDzNQjvz14Nihhg1z9e6BmybpbwMH1wGlp8mE/aINxRLuLk2JzKWbuDQWfdqWvzAahzuZsHUyFwwWzK/fzEwKPTYrTNNfxeEm5q35SoqlibUa7CjBrmRoOtyTjWHTlZK99hhdHAc93Fm/ryYXApYxE9sEasJgY9wvEInz4usPC8yfJo3P5KqyJqceGa8MWGg=="
   }
 }
